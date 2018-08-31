@@ -12,7 +12,7 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 
 - Lecture notes on [Active Record](https://git.generalassemb.ly/wdi-nyc-lambda/active_record_intro).
 
-- The [landlord ApI](https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api).
+- The [landlord API](https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api).
 
 - [These](https://guides.rubyonrails.org/) wonderful things.
 
