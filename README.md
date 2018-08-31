@@ -4,7 +4,7 @@
 
 ![orbits](https://iwsmt-content-ok2nbdvvyp8jbrhdp.stackpathdns.com/2282013232750iAtC2afkODS6U.gif)
 
-Over the long weekend you'll be making a little baby rails app about PLANETS!!!! Gotta get those reps in!!! 💪💪💪
+Over the long weekend you'll be making a little baby rails/react app about PLANETS!!!! Gotta get those reps in!!! 💪💪💪
 
 ## Resources
 
