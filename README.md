@@ -8,7 +8,7 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 
 ## Resources
 
-- Here's a [full CRUD react app](https://git.generalassemb.ly/wdi-nyc-thundercats/react-rails-monsters) to use as reference. 
+- Here's a [full-stack/ full CRUD react app](https://git.generalassemb.ly/wdi-nyc-lambda/react-rails-monsters) to use as reference. 
 
 - Lecture notes on [Active Record](https://git.generalassemb.ly/wdi-nyc-lambda/active_record_intro).
 
