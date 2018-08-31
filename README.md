@@ -10,6 +10,12 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 
 - Here's a [full CRUD react app](https://git.generalassemb.ly/wdi-nyc-thundercats/react-rails-monsters) to use as reference. 
 
+- Lecture notes on [Active Record](https://git.generalassemb.ly/wdi-nyc-lambda/active_record_intro).
+
+- The [landlord ApI](https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api).
+
+- [These](https://guides.rubyonrails.org/) wonderful things.
+
 - Here's some [planets data](planets.rb) that you can utilize to seed your database.
 
 ## TODO:
@@ -34,4 +40,4 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 
 ## Deliverable/Submission
 
-You will be creating a new repo for this homework. You do not have to fork and clone this one. Create an issue ticket on this repo with a link to your repo containing your full stack react/rails planets app.
+You will be creating a new repo for this homework. You do not have to fork and clone this one. _Create an issue ticket on this repo with a link to your repo_ containing your full stack react/rails planets app.
