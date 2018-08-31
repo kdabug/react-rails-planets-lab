@@ -26,7 +26,7 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 - Create your planet routes (`resources`).
 - Implement index controller action.
 - In the react FE create a view for showing all planets.
-- Make an api call to get things from the rails server and display it.
+- Make an API call to get things from the rails server and display it.
 - Make a second planet from the console.
 - Write a show controller action and associated react components.
 - Write a delete conroller action.
