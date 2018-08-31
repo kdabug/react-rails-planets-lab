@@ -4,35 +4,34 @@
 
 ![orbits](https://iwsmt-content-ok2nbdvvyp8jbrhdp.stackpathdns.com/2282013232750iAtC2afkODS6U.gif)
 
-Tonight you'll be making a little baby rails app about PLANETS!!!! Gotta get those reps in!!! 💪💪💪
+Over the long weekend you'll be making a little baby rails app about PLANETS!!!! Gotta get those reps in!!! 💪💪💪
 
 ## Resources
 
-- Here's a [full CRUD react app]() to use as reference. It only works if you actually look at it though. 
+- Here's a [full CRUD react app](https://git.generalassemb.ly/wdi-nyc-thundercats/react-rails-monsters) to use as reference. 
 
-- Here's some [planets data](planets.rb) that you can utilize to seed your database
+- Here's some [planets data](planets.rb) that you can utilize to seed your database.
 
 ## TODO:
 
 - `create-react-app` and `rails new`
-- be able to show all planets, show one
-- start by making Rails model + make 1 planet in the db with the rails console
-- create your planet routes (`resources`)
-- implement index controller action
-- make react FE with a view for showing all planets
-- make api call to get things from the rails server and display it
-- make a second planet from the console
-- write a show controller action and associated react components
-- write a delete conroller action
-- implement delete functionality in React (delete button that calls delete fetch request)
-- write a create action and a create form in react
-- write an update action and edit form in react
-- wire it all up
+- Be able to show all planets and show one planet.
+- Start by making a Rails model and make 1 planet in the db with the rails console.
+- Create your planet routes (`resources`).
+- Implement index controller action.
+- In the react FE create a view for showing all planets.
+- Make an api call to get things from the rails server and display it.
+- Make a second planet from the console.
+- Write a show controller action and associated react components.
+- Write a delete conroller action.
+- Implement delete functionality in React (a delete planet button that calls delete fetch request).
+- Write a create action and a create form in react. Wire it up.
+- write an update action and edit form in react. Wire it up.
 
 ## Bonus
 
-- be able to show one random planet
+- Be able to show one random planet.
 
-## Deliverable
+## Deliverable/Submission
 
-You will be creating a new repo for this homework. You do not have to fork and clone this one. Create an issue ticket on this repo with a link to your repo containing your full stack react/rails planets app. 
+You will be creating a new repo for this homework. You do not have to fork and clone this one. Create an issue ticket on this repo with a link to your repo containing your full stack react/rails planets app.
