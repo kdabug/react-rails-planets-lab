@@ -29,7 +29,7 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 - Make an API call to get things from the rails server and display it.
 - Make a second planet from the console.
 - Write a show controller action and associated react components.
-- Write a delete conroller action.
+- Write a delete controller action.
 - Implement delete functionality in React (a delete planet button that calls delete fetch request).
 - Write a create action and a create form in react. Wire it up.
 - write an update action and edit form in react. Wire it up.
@@ -37,6 +37,8 @@ Over the long weekend you'll be making a little baby rails app about PLANETS!!!!
 ## Bonus
 
 - Be able to show one random planet.
+
+- Implement a controller function that switches the view depending on what the user clicked on (conditional render).
 
 ## Deliverable/Submission
 
