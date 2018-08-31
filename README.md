@@ -32,7 +32,7 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 - Write a delete controller action.
 - Implement delete functionality in React (a delete planet button that calls delete fetch request).
 - Write a create action and a create form in react. Wire it up.
-- write an update action and edit form in react. Wire it up.
+- Write an update action and edit form in react. Wire it up.
 
 ## Bonus
 
