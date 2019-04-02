@@ -18,6 +18,14 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 
 - Here's some [planets data](planets.rb) that you can utilize to seed your database.
 
+## Planet Table
+
+- Your planet table should have columns for:
+  - `name` (text)
+  - `distance_from_sun` (text)
+  - `diameter` (text)
+  - `orbit_period` (text)
+
 ## TODO:
 
 - `create-react-app` and `rails new`
