@@ -31,6 +31,8 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 - create a rails and react app:
     - `rails new planet_app -G --database=postgresql --skip-test` to create a new rails app
     - `create-react-app client` to create a new react app INSIDE your rails app.
+    - confirm you only have one `.git` folder by typing `ls -la` in each directory.
+    - You should be **committing** after each bullet point.
 - Be able to show all planets and show one planet.
 - Start by making a Rails model and make 1 planet in the db with the rails console.
 - Create your planet routes (`resources`).
@@ -52,4 +54,4 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 
 ## Deliverable/Submission
 
-You will be creating a new repo for this homework. You do not have to fork and clone this one. _Create an issue ticket on this repo with a link to your repo_ containing your full stack react/rails planets app.
+- Fork and clone this repo. Submit by 11pm.
