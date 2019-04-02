@@ -28,7 +28,7 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 
 ## TODO:
 
-- `create-react-app` and `rails new`
+- create a rails and react app:
     - `rails new planet_app -G --database=postgresql --skip-test` to create a new rails app
     - `create-react-app client` to create a new react app INSIDE your rails app.
 - Be able to show all planets and show one planet.
