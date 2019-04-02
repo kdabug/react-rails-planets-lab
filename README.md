@@ -55,3 +55,5 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 ## Deliverable/Submission
 
 - Fork and clone this repo. Submit by 11pm.
+
+- When you finish read about [unit testing](https://blog.codeship.com/unit-testing-in-ruby/)
