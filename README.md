@@ -12,7 +12,7 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 
 - Lecture notes on [Active Record](https://git.generalassemb.ly/wdi-nyc-bananas/active_record_intro).
 
-- The [landlord API](https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api).
+- The [landlord API](https://git.generalassemb.ly/wdi-nyc-bananas/rails-active-record-landlord).
 
 - [These](https://guides.rubyonrails.org/) wonderful things.
 
