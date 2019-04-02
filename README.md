@@ -47,6 +47,7 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 - Write an update action and edit form in react. Wire it up.
 
 ## Bonus
+- Styling!
 
 - Be able to show one random planet.
 
