@@ -8,9 +8,9 @@ Over the long weekend you'll be making a little baby rails/react app about PLANE
 
 ## Resources
 
-- Here's a [full-stack/ full CRUD react app](https://git.generalassemb.ly/wdi-nyc-lambda/react-rails-monsters) to use as reference. 
+- Refer to the [lesson](https://git.generalassemb.ly/wdi-nyc-bananas/rails_api_many2many) 
 
-- Lecture notes on [Active Record](https://git.generalassemb.ly/wdi-nyc-lambda/active_record_intro).
+- Lecture notes on [Active Record](https://git.generalassemb.ly/wdi-nyc-bananas/active_record_intro).
 
 - The [landlord API](https://git.generalassemb.ly/wdi-nyc-lambda/rails-landlord-api).
 
