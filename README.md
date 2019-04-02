@@ -29,7 +29,7 @@ Tonight, you'll be making a little baby rails/react app about PLANETS!!!! Gotta 
 ## TODO:
 
 - create a rails and react app:
-    - `rails new planet_app -G --database=postgresql --skip-test` to create a new rails app
+    - `rails new planet_app -G --database=postgresql --api --skip-test` to create a new rails app
     - `create-react-app client` to create a new react app INSIDE your rails app.
     - confirm you only have one `.git` folder by typing `ls -la` in each directory.
     - You should be **committing** after each bullet point.
