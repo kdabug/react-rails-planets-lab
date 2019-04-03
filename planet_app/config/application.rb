@@ -1,4 +1,4 @@
-require_relative 'boot'
+require_relative "boot"
 
 require "rails"
 # Pick the frameworks you want:
@@ -31,5 +31,12 @@ module PlanetApp
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.api_only = true
+    config.middleware.use Rack::Cors do
+      allow do
+        origins "*"
+        resource "*", :headers => :any, :methods => [:get, :post, :put, :options, :delete], :credentials => false
+      end
+    end
   end
 end
