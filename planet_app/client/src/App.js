@@ -31,8 +31,8 @@ class App extends Component {
     }));
   }
   async handleSubmit() {
-    const respData = await axios.get(
-      `${BASE_URL}/planets/create`,
+    const respData = await axios.post(
+      `${BASE_URL}/planets`,
       this.state.planetData
     );
     this.setState((prevState, newState) => ({
@@ -56,7 +56,14 @@ class App extends Component {
       }
     }));
   }
-  async handleDelete() {}
+  async handleDelete(planet) {
+    const { id } = planet;
+    console.log(`Deleting dragon with an id of ${id}`);
+    await axios.get(`${BASE_URL}/planets/${id}/delete`, this.state.planetData);
+    this.setState(prevState => ({
+      dragonData: prevState.dragonData.filter(dragon => dragon.id !== id)
+    }));
+  }
 
   toggleCreate() {
     this.setState((prevState, newState) => ({
@@ -64,8 +71,9 @@ class App extends Component {
     }));
   }
   async editPlanet(planet) {
-    const respData = await axios.get(
-      `${BASE_URL}/planets/create`,
+    const { id } = planet;
+    const respData = await axios.update(
+      `${BASE_URL}/planets/${id}/edit`,
       this.state.planetData
     );
     this.setState({
@@ -103,41 +111,43 @@ class App extends Component {
         <button onClick={this.toggleCreate}>
           {this.state.toggle ? "Show Less" : "Create Planet"}
         </button>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="name"
-            value={this.state.planetData.name}
-            onChange={this.handleChange}
-          />
+        {this.state.toggle && (
+          <form onSubmit={this.handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="name"
+              value={this.state.planetData.name}
+              onChange={this.handleChange}
+            />
 
-          <input
-            type="text"
-            name="distance_from_sun"
-            placeholder="distance_from_sun"
-            value={this.state.planetData.distance_from_sun}
-            onChange={this.handleChange}
-          />
+            <input
+              type="text"
+              name="distance_from_sun"
+              placeholder="distance_from_sun"
+              value={this.state.planetData.distance_from_sun}
+              onChange={this.handleChange}
+            />
 
-          <input
-            type="text"
-            name="orbit_period"
-            placeholder="oribit_period"
-            value={this.state.planetData.orbit_period}
-            onChange={this.handleChange}
-          />
-          <input
-            type="text"
-            name="diameter"
-            placeholder="diameter"
-            value={this.state.planetData.diameter}
-            onChange={this.handleChange}
-          />
-          <button type="submit" onClick={this.handleSubmit}>
-            Submit
-          </button>
-        </form>
+            <input
+              type="text"
+              name="orbit_period"
+              placeholder="oribit_period"
+              value={this.state.planetData.orbit_period}
+              onChange={this.handleChange}
+            />
+            <input
+              type="text"
+              name="diameter"
+              placeholder="diameter"
+              value={this.state.planetData.diameter}
+              onChange={this.handleChange}
+            />
+            <button type="submit" onClick={this.handleSubmit}>
+              Submit
+            </button>
+          </form>
+        )}
       </div>
     );
   }
