@@ -1194,3 +1194,79 @@ Processing by PlanetsController#index as HTML
 Completed 200 OK in 17ms (Views: 10.4ms | ActiveRecord: 4.9ms)
 
 
+Started GET "//planets" for ::1 at 2019-04-03 00:30:02 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (5.2ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 9ms (Views: 3.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "//planets" for ::1 at 2019-04-03 00:30:58 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "//planets" for ::1 at 2019-04-03 00:33:55 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.5ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "//planets/create" for ::1 at 2019-04-03 00:34:35 -0400
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPlanet Load (0.5ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:8
+Completed 404 Not Found in 60ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Planet with 'id'=create):
+  
+app/controllers/planets_controller.rb:8:in `show'
+Started GET "//planets" for ::1 at 2019-04-03 00:34:35 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "//planets/create" for ::1 at 2019-04-03 00:37:35 -0400
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:8
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Planet with 'id'=create):
+  
+app/controllers/planets_controller.rb:8:in `show'
+Started GET "//planets/create" for ::1 at 2019-04-03 00:37:37 -0400
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPlanet Load (0.2ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:8
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Planet with 'id'=create):
+  
+app/controllers/planets_controller.rb:8:in `show'
+Started GET "//planets/create" for ::1 at 2019-04-03 00:37:38 -0400
+Processing by PlanetsController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:8
+Completed 404 Not Found in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Planet with 'id'=create):
+  
+app/controllers/planets_controller.rb:8:in `show'
