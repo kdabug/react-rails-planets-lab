@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Route, withRouter } from "react-router-dom";
 
 export default props => {
   const { toggle, planetList, handleDelete, editPlanet, toggleCreate } = props;
@@ -11,9 +12,12 @@ export default props => {
       {planetList &&
         planetList.map(planet => (
           <div>
-            <p>{planet.name}</p>
+            <h2>{planet.name}</h2>
+            <p>{planet.distance_from_sun}</p>
+            <p>{planet.orbit_period}</p>
+            <p>{planet.diameter}</p>
             <button onClick={() => handleDelete(planet)}>Delete Planet</button>
-            <button onClick={() => updatePlanet(planet)}>Edit Planet</button>
+            <button onClick={() => editPlanet(planet)}>Edit Planet</button>
           </div>
         ))}
     </div>

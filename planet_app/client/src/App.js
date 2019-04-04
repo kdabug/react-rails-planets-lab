@@ -31,10 +31,13 @@ class App extends Component {
       }
     };
     this.getPlanets = this.getPlanets.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handlePlanetChange = this.handlePlanetChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.toggleCreate = this.toggleCreate.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.editPlanet = this.editPlanet.bind(this);
+    this.handleEditChange = this.handleEditChange.bind(this);
+    this.handleEditSubmit = this.handleEditSubmit.bind(this);
   }
 
   async getPlanets() {
@@ -55,6 +58,7 @@ class App extends Component {
         diameter: ""
       }
     }));
+    this.props.history.push(`/`);
   }
   async handleEditSubmit(planet) {
     const { id } = planet;
@@ -62,7 +66,7 @@ class App extends Component {
     this.getPlanets();
     this.props.history.push(`/`);
   }
-  async handleChange(e) {
+  async handlePlanetChange(e) {
     e.preventDefault();
     const { name, value } = e.target;
     console.log("handleRegisterChange name, val", name, value);
@@ -73,9 +77,22 @@ class App extends Component {
       }
     }));
   }
+  async handleEditChange(e) {
+    e.preventDefault();
+    const { name, value } = e.target;
+    console.log("handleEditChange name, val", name, value);
+    console.log("handleEditChange name, val", this.state.editPlanetData);
+
+    await this.setState(prevState => ({
+      editPlanetData: {
+        ...prevState.editPlanetData,
+        [name]: value
+      }
+    }));
+  }
   async handleDelete(planet) {
     const { id } = planet;
-    console.log(`Deleting dragon with an id of ${id}`);
+    console.log(`Deleting planet with an id of ${id}`);
     await deletePlanet(id);
     this.setState(prevState => ({
       planetList: prevState.planetList.filter(planet => planet.id !== id)
@@ -97,7 +114,7 @@ class App extends Component {
         diameter: planet.diameter
       }
     });
-    this.props.history.push(`/planet/${planet.id}`);
+    this.props.history.push(`/planets/${planet.id}`);
   }
 
   async componentDidMount() {
@@ -121,10 +138,11 @@ class App extends Component {
                   this.state.planetData.distance_from_the_sun
                 }
                 diameter={this.state.planetData.diameter}
-                handleChange={this.handleChange}
+                handleChange={this.handlePlanetChange}
                 handleSubmit={this.handleSubmit}
               />
               <PlanetList
+                {...props}
                 toggle={this.state.toggle}
                 planetList={this.state.planetList}
                 handleDelete={this.handleDelete}
@@ -136,7 +154,7 @@ class App extends Component {
         />
         <Route
           exact
-          path="/planet/:id"
+          path="/planets/:id"
           render={props => (
             <>
               <PlanetForm
@@ -148,7 +166,7 @@ class App extends Component {
                   this.state.editPlanetData.distance_from_the_sun
                 }
                 diameter={this.state.editPlanetData.diameter}
-                handleChange={this.handleChange}
+                handleChange={this.handleEditChange}
                 handleSubmit={this.handleEditSubmit}
               />
             </>
@@ -159,4 +177,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

@@ -10,8 +10,8 @@ const createPlanet = async user => {
 
 const updatePlanet = async (id, edits) => {
   console.log("making an edit request with this data", edits);
-  const respData = await axios.put(`/users/${id}/edit`, edits);
-  console.log("this is edit user: resp", respData);
+  const respData = await axios.put(`${BASE_URL}/planets/${id}/`, edits);
+  console.log("this is edit: resp", respData);
   return respData;
 };
 
