@@ -1,14 +1,29 @@
 import React, { Component } from "react";
-import axios from "axios";
+import {
+  fetchPlanets,
+  updatePlanet,
+  deletePlanet,
+  createPlanet
+} from "./services/planets";
 import "./App.css";
-const BASE_URL = "http://localhost:3000/";
+import PlanetForm from "./components/PlanetForm";
+import { Link, Route, withRouter } from "react-router-dom";
+import PlanetList from "./components/PlanetList";
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       planetList: "",
       toggle: false,
+      toggleEdit: false,
       planetData: {
+        name: "",
+        distance_from_sun: "",
+        orbit_period: "",
+        diameter: ""
+      },
+      editPlanetData: {
         name: "",
         distance_from_sun: "",
         orbit_period: "",
@@ -23,18 +38,14 @@ class App extends Component {
   }
 
   async getPlanets() {
-    const respData = await axios.get(`${BASE_URL}/planets`);
-    const planetList = respData.data;
-    console.log("this is getPlanets : resp", planetList);
+    const planetList = await fetchPlanets();
+    console.log("this is getPlanets : resp", planetList.data);
     this.setState((prevState, newState) => ({
-      planetList
+      planetList: planetList.data
     }));
   }
   async handleSubmit() {
-    const respData = await axios.post(
-      `${BASE_URL}/planets`,
-      this.state.planetData
-    );
+    const respData = await createPlanet(this.state.planetData);
     this.setState((prevState, newState) => ({
       planetList: [...prevState.planetList, respData.data],
       planetData: {
@@ -44,6 +55,12 @@ class App extends Component {
         diameter: ""
       }
     }));
+  }
+  async handleEditSubmit(planet) {
+    const { id } = planet;
+    const respData = await updatePlanet(id, this.state.editPlanetData);
+    this.getPlanets();
+    this.props.history.push(`/`);
   }
   async handleChange(e) {
     e.preventDefault();
@@ -59,9 +76,9 @@ class App extends Component {
   async handleDelete(planet) {
     const { id } = planet;
     console.log(`Deleting dragon with an id of ${id}`);
-    await axios.get(`${BASE_URL}/planets/${id}/delete`, this.state.planetData);
+    await deletePlanet(id);
     this.setState(prevState => ({
-      dragonData: prevState.dragonData.filter(dragon => dragon.id !== id)
+      planetList: prevState.planetList.filter(planet => planet.id !== id)
     }));
   }
 
@@ -71,19 +88,16 @@ class App extends Component {
     }));
   }
   async editPlanet(planet) {
-    const { id } = planet;
-    const respData = await axios.update(
-      `${BASE_URL}/planets/${id}/edit`,
-      this.state.planetData
-    );
     this.setState({
-      planetData: {
-        name: "",
-        distance_from_sun: "",
-        orbit_period: "",
-        diameter: ""
+      toggle: true,
+      editPlanetData: {
+        name: planet.name,
+        distance_from_sun: planet.distance_from_sun,
+        orbit_period: planet.orbit_period,
+        diameter: planet.diameter
       }
     });
+    this.props.history.push(`/planet/${planet.id}`);
   }
 
   async componentDidMount() {
@@ -93,61 +107,53 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <>
-          {this.state.planetList &&
-            this.state.planetList.map(planet => (
-              <div>
-                <p>{planet.name}</p>
-                <button onClick={() => this.handleDelete(planet)}>
-                  Delete Planet
-                </button>
-                <button onClick={() => this.editPlanet(planet)}>
-                  Edit Planet
-                </button>
-              </div>
-            ))}
-        </>
-
-        <button onClick={this.toggleCreate}>
-          {this.state.toggle ? "Show Less" : "Create Planet"}
-        </button>
-        {this.state.toggle && (
-          <form onSubmit={this.handleSubmit}>
-            <input
-              type="text"
-              name="name"
-              placeholder="name"
-              value={this.state.planetData.name}
-              onChange={this.handleChange}
-            />
-
-            <input
-              type="text"
-              name="distance_from_sun"
-              placeholder="distance_from_sun"
-              value={this.state.planetData.distance_from_sun}
-              onChange={this.handleChange}
-            />
-
-            <input
-              type="text"
-              name="orbit_period"
-              placeholder="oribit_period"
-              value={this.state.planetData.orbit_period}
-              onChange={this.handleChange}
-            />
-            <input
-              type="text"
-              name="diameter"
-              placeholder="diameter"
-              value={this.state.planetData.diameter}
-              onChange={this.handleChange}
-            />
-            <button type="submit" onClick={this.handleSubmit}>
-              Submit
-            </button>
-          </form>
-        )}
+        <h1>Planet's Ap</h1>
+        <Route
+          exact
+          path="/"
+          render={props => (
+            <>
+              <PlanetForm
+                toggle={this.state.toggle}
+                name={this.state.planetData.name}
+                orbit_period={this.state.planetData.orbit_period}
+                distance_from_the_sun={
+                  this.state.planetData.distance_from_the_sun
+                }
+                diameter={this.state.planetData.diameter}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
+              />
+              <PlanetList
+                toggle={this.state.toggle}
+                planetList={this.state.planetList}
+                handleDelete={this.handleDelete}
+                editPlanet={this.editPlanet}
+                toggleCreate={this.toggleCreate}
+              />
+            </>
+          )}
+        />
+        <Route
+          exact
+          path="/planet/:id"
+          render={props => (
+            <>
+              <PlanetForm
+                {...props}
+                toggle="true"
+                name={this.state.editPlanetData.name}
+                orbit_period={this.state.editPlanetData.orbit_period}
+                distance_from_the_sun={
+                  this.state.editPlanetData.distance_from_the_sun
+                }
+                diameter={this.state.editPlanetData.diameter}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleEditSubmit}
+              />
+            </>
+          )}
+        />
       </div>
     );
   }

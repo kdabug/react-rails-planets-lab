@@ -1427,3 +1427,40 @@ Processing by PlanetsController#index as HTML
 Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "//planets" for ::1 at 2019-04-03 23:12:59 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Gertrude/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.5ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 62ms (Views: 10.7ms | ActiveRecord: 49.2ms)
+
+
+Started GET "//planets" for ::1 at 2019-04-03 23:13:25 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "//planets" for ::1 at 2019-04-03 23:13:51 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//planets" for ::1 at 2019-04-03 23:17:48 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.4ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "//planets" for ::1 at 2019-04-03 23:18:21 -0400
+Processing by PlanetsController#index as HTML
+  [1m[36mPlanet Load (0.5ms)[0m  [1m[34mSELECT "planets".* FROM "planets"[0m
+  ↳ app/controllers/planets_controller.rb:4
+Completed 200 OK in 14ms (Views: 12.8ms | ActiveRecord: 0.5ms)
+
+
