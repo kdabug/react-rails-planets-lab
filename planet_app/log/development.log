@@ -2161,3 +2161,33 @@ Completed 500 Internal Server Error in 45ms (ActiveRecord: 41.3ms)
 NoMethodError (undefined method `push' for nil:NilClass):
   
 app/controllers/planets_controller.rb:15:in `create'
+Started OPTIONS "/planets/2" for ::1 at 2019-04-13 17:22:08 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Gertrude/.rvm/gems/ruby-2.6.2/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Started DELETE "/planets/2" for ::1 at 2019-04-13 17:22:08 -0400
+Processing by PlanetsController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlanet Load (0.3ms)[0m  [1m[34mSELECT  "planets".* FROM "planets" WHERE "planets"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/planets_controller.rb:31
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/planets_controller.rb:32
+  [1m[36mPlanet Destroy (0.3ms)[0m  [1m[31mDELETE FROM "planets" WHERE "planets"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/planets_controller.rb:32
+  [1m[35m (45.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/planets_controller.rb:32
+Completed 204 No Content in 62ms (ActiveRecord: 50.7ms)
+
+
+Started POST "/planets" for ::1 at 2019-04-13 17:22:21 -0400
+Processing by PlanetsController#create as HTML
+  Parameters: {"id"=>"", "name"=>"Thaisa 28888", "distance_from_sun"=>"888", "orbit_period"=>"888", "diameter"=>"8888", "planet"=>{"id"=>"", "name"=>"Thaisa 28888", "distance_from_sun"=>"888", "diameter"=>"8888", "orbit_period"=>"888"}}
+Unpermitted parameter: :id
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/planets_controller.rb:14
+  [1m[36mPlanet Create (0.7ms)[0m  [1m[32mINSERT INTO "planets" ("name", "distance_from_sun", "diameter", "orbit_period", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Thaisa 28888"], ["distance_from_sun", "888"], ["diameter", "8888"], ["orbit_period", "888"], ["created_at", "2019-04-13 21:22:21.384813"], ["updated_at", "2019-04-13 21:22:21.384813"]]
+  ↳ app/controllers/planets_controller.rb:14
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/planets_controller.rb:14
+Completed 201 Created in 5ms (Views: 0.5ms | ActiveRecord: 1.2ms)
+
+
