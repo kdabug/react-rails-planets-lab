@@ -42,7 +42,7 @@ export default props => {
             value={diameter}
             onChange={handleChange}
           />
-          <button type="submit" onClick={handleSubmit}>
+          <button type="submit" onClick={e => handleSubmit(e)}>
             Submit
           </button>
         </form>

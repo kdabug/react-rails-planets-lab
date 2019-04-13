@@ -18,12 +18,14 @@ class App extends Component {
       toggle: false,
       toggleEdit: false,
       planetData: {
+        id: "",
         name: "",
         distance_from_sun: "",
         orbit_period: "",
         diameter: ""
       },
       editPlanetData: {
+        id: "",
         name: "",
         distance_from_sun: "",
         orbit_period: "",
@@ -47,7 +49,8 @@ class App extends Component {
       planetList: planetList.data
     }));
   }
-  async handleSubmit() {
+  async handleSubmit(e) {
+    e.preventDefault();
     const respData = await createPlanet(this.state.planetData);
     this.setState((prevState, newState) => ({
       planetList: [...prevState.planetList, respData.data],
@@ -60,9 +63,12 @@ class App extends Component {
     }));
     this.props.history.push(`/`);
   }
-  async handleEditSubmit(planet) {
-    const { id } = planet;
-    const respData = await updatePlanet(id, this.state.editPlanetData);
+  async handleEditSubmit(e) {
+    e.preventDefault();
+    const respData = await updatePlanet(
+      this.state.editPlanetData.id,
+      this.state.editPlanetData
+    );
     this.getPlanets();
     this.props.history.push(`/`);
   }
@@ -108,6 +114,7 @@ class App extends Component {
     this.setState({
       toggle: true,
       editPlanetData: {
+        id: planet.id,
         name: planet.name,
         distance_from_sun: planet.distance_from_sun,
         orbit_period: planet.orbit_period,
